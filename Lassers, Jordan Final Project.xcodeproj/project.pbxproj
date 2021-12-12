@@ -7,25 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B13610D275C6BFF00DE11D7 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13610C275C6BFF00DE11D7 /* CoreDataHelper.swift */; };
+		8B13D56D2757188500552558 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13D56C2757188500552558 /* TeamViewController.swift */; };
+		8B13D56F27580BB900552558 /* NewEditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13D56E27580BB900552558 /* NewEditPlayerViewController.swift */; };
 		8B349019273E1906005D0061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B349018273E1906005D0061 /* AppDelegate.swift */; };
 		8B34901B273E1906005D0061 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34901A273E1906005D0061 /* SceneDelegate.swift */; };
-		8B34901D273E1906005D0061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34901C273E1906005D0061 /* ViewController.swift */; };
+		8B34901D273E1906005D0061 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34901C273E1906005D0061 /* TeamListViewController.swift */; };
 		8B349020273E1906005D0061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B34901E273E1906005D0061 /* Main.storyboard */; };
 		8B349023273E1906005D0061 /* Lassers__Jordan_Final_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B349021273E1906005D0061 /* Lassers__Jordan_Final_Project.xcdatamodeld */; };
 		8B349025273E1907005D0061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B349024273E1907005D0061 /* Assets.xcassets */; };
 		8B349028273E1907005D0061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B349026273E1907005D0061 /* LaunchScreen.storyboard */; };
+		8B349030273E1BFA005D0061 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34902F273E1BFA005D0061 /* RoundButton.swift */; };
+		8B458DA5274F2CBA004EF947 /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B458DA4274F2CBA004EF947 /* NewTeamViewController.swift */; };
+		8B6606162762FBEB0019922D /* DigiRoster.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6606142762FBEB0019922D /* DigiRoster.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B13610C275C6BFF00DE11D7 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		8B13D56C2757188500552558 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		8B13D56E27580BB900552558 /* NewEditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditPlayerViewController.swift; sourceTree = "<group>"; };
 		8B349015273E1906005D0061 /* Lassers, Jordan Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lassers, Jordan Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B349018273E1906005D0061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B34901A273E1906005D0061 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B34901C273E1906005D0061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B34901C273E1906005D0061 /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		8B34901F273E1906005D0061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B349022273E1906005D0061 /* Lassers__Jordan_Final_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lassers__Jordan_Final_Project.xcdatamodel; sourceTree = "<group>"; };
 		8B349024273E1907005D0061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B349027273E1907005D0061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B349029273E1907005D0061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B34902F273E1BFA005D0061 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		8B458DA4274F2CBA004EF947 /* NewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamViewController.swift; sourceTree = "<group>"; };
+		8B6606142762FBEB0019922D /* DigiRoster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DigiRoster.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +72,18 @@
 			children = (
 				8B349018273E1906005D0061 /* AppDelegate.swift */,
 				8B34901A273E1906005D0061 /* SceneDelegate.swift */,
-				8B34901C273E1906005D0061 /* ViewController.swift */,
+				8B34901C273E1906005D0061 /* TeamListViewController.swift */,
 				8B34901E273E1906005D0061 /* Main.storyboard */,
+				8B13D56E27580BB900552558 /* NewEditPlayerViewController.swift */,
+				8B458DA4274F2CBA004EF947 /* NewTeamViewController.swift */,
+				8B34902F273E1BFA005D0061 /* RoundButton.swift */,
 				8B349024273E1907005D0061 /* Assets.xcassets */,
 				8B349026273E1907005D0061 /* LaunchScreen.storyboard */,
 				8B349029273E1907005D0061 /* Info.plist */,
 				8B349021273E1906005D0061 /* Lassers__Jordan_Final_Project.xcdatamodeld */,
+				8B13610C275C6BFF00DE11D7 /* CoreDataHelper.swift */,
+				8B13D56C2757188500552558 /* TeamViewController.swift */,
+				8B6606142762FBEB0019922D /* DigiRoster.png */,
 			);
 			path = "Lassers, Jordan Final Project";
 			sourceTree = "<group>";
@@ -127,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6606162762FBEB0019922D /* DigiRoster.png in Resources */,
 				8B349028273E1907005D0061 /* LaunchScreen.storyboard in Resources */,
 				8B349025273E1907005D0061 /* Assets.xcassets in Resources */,
 				8B349020273E1906005D0061 /* Main.storyboard in Resources */,
@@ -140,9 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B34901D273E1906005D0061 /* ViewController.swift in Sources */,
+				8B13D56F27580BB900552558 /* NewEditPlayerViewController.swift in Sources */,
+				8B34901D273E1906005D0061 /* TeamListViewController.swift in Sources */,
+				8B13D56D2757188500552558 /* TeamViewController.swift in Sources */,
+				8B349030273E1BFA005D0061 /* RoundButton.swift in Sources */,
 				8B349019273E1906005D0061 /* AppDelegate.swift in Sources */,
 				8B349023273E1906005D0061 /* Lassers__Jordan_Final_Project.xcdatamodeld in Sources */,
+				8B13610D275C6BFF00DE11D7 /* CoreDataHelper.swift in Sources */,
+				8B458DA5274F2CBA004EF947 /* NewTeamViewController.swift in Sources */,
 				8B34901B273E1906005D0061 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,24 +1,425 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bb8-rY-NO5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Team List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TeamListViewController" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEo-D2-hzz">
+                                <rect key="frame" x="80" y="98" width="254.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mvE-to-Bol"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sV6-ac-bHy">
+                                <rect key="frame" x="10" y="158" width="394" height="584"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teamNameCell" id="OQL-hU-h0G">
+                                        <rect key="frame" x="0.0" y="24.5" width="394" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OQL-hU-h0G" id="dab-zz-ajb">
+                                            <rect key="frame" x="0.0" y="0.0" width="364.5" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Rgo-x2-GWb" kind="show" identifier="showTeamViewController" id="gFk-os-Gus"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBy-eI-HH9" customClass="RoundButton" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="50" y="752" width="314" height="60"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="62l-lu-oPv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Create New Team">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createNewTeam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4do-xz-JUI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IEo-D2-hzz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jd9-ah-UZF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sV6-ac-bHy" secondAttribute="trailing" constant="10" id="YJ1-lE-SSX"/>
+                            <constraint firstItem="KBy-eI-HH9" firstAttribute="top" secondItem="sV6-ac-bHy" secondAttribute="bottom" constant="10" id="aMZ-Eq-dYc"/>
+                            <constraint firstItem="sV6-ac-bHy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jZn-Ur-xn2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KBy-eI-HH9" secondAttribute="bottom" constant="50" id="kfj-AC-pST"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KBy-eI-HH9" secondAttribute="trailing" constant="50" id="o2A-Bi-S5x"/>
+                            <constraint firstItem="sV6-ac-bHy" firstAttribute="top" secondItem="IEo-D2-hzz" secondAttribute="bottom" constant="10" id="qdI-aC-tML"/>
+                            <constraint firstItem="KBy-eI-HH9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="sxu-Pz-DbC"/>
+                            <constraint firstItem="IEo-D2-hzz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="xy2-uf-1n2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1j1-Cm-Qig">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="WZi-nj-gkX">
+                            <connections>
+                                <action selector="editAction:" destination="BYZ-38-t0r" id="PP9-Od-FlR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editDoneButton" destination="WZi-nj-gkX" id="hBc-SI-iaZ"/>
+                        <outlet property="tableView" destination="sV6-ac-bHy" id="EaI-w0-bC9"/>
+                        <segue destination="M36-KQ-0Yf" kind="show" identifier="showNewTeamViewController" id="paO-OK-Bsz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="78.348214285714278"/>
+        </scene>
+        <!--Team Name-->
+        <scene sceneID="TXr-fk-0Ew">
+            <objects>
+                <viewController id="Rgo-x2-GWb" customClass="TeamViewController" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="maa-D4-WIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bok-Bq-zDY">
+                                <rect key="frame" x="10" y="98" width="394" height="595"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playerCell" textLabel="OCY-Bz-c7M" detailTextLabel="SAd-BJ-bdE" style="IBUITableViewCellStyleValue2" id="RkC-Hb-gnc">
+                                        <rect key="frame" x="0.0" y="24.5" width="394" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RkC-Hb-gnc" id="VIr-nb-rAn" customClass="PlayerCell" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="364.5" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OCY-Bz-c7M">
+                                                    <rect key="frame" x="20" y="12" width="91" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SAd-BJ-bdE">
+                                                    <rect key="frame" x="117" y="12" width="47.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yXy-0g-CHv" kind="show" identifier="editPlayer" id="w6F-uq-RNM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rgo-x2-GWb" id="Xx2-02-ukL"/>
+                                    <outlet property="delegate" destination="Rgo-x2-GWb" id="PDQ-FX-vP8"/>
+                                </connections>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcS-2C-hjb" customClass="RoundButton" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="50" y="703" width="314" height="60"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fuE-jn-vQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Edit Team Name">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="editTeam:" destination="Rgo-x2-GWb" eventType="touchUpInside" id="fAR-gh-YkP"/>
+                                    <segue destination="M36-KQ-0Yf" kind="show" identifier="editTeamName" id="9LL-Gh-yeW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yil-uy-B4A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PcS-2C-hjb" firstAttribute="top" secondItem="Bok-Bq-zDY" secondAttribute="bottom" constant="10" id="7i4-uQ-iMu"/>
+                            <constraint firstItem="Yil-uy-B4A" firstAttribute="trailing" secondItem="Bok-Bq-zDY" secondAttribute="trailing" constant="10" id="C4f-Gb-Gcy"/>
+                            <constraint firstItem="Bok-Bq-zDY" firstAttribute="top" secondItem="Yil-uy-B4A" secondAttribute="top" constant="10" id="SJ4-rY-zhe"/>
+                            <constraint firstItem="Yil-uy-B4A" firstAttribute="bottom" secondItem="PcS-2C-hjb" secondAttribute="bottom" constant="50" id="agE-GG-g6x"/>
+                            <constraint firstItem="Bok-Bq-zDY" firstAttribute="leading" secondItem="Yil-uy-B4A" secondAttribute="leading" constant="10" id="mPm-27-x9w"/>
+                            <constraint firstItem="Yil-uy-B4A" firstAttribute="trailing" secondItem="PcS-2C-hjb" secondAttribute="trailing" constant="50" id="t48-Gi-p2J"/>
+                            <constraint firstItem="PcS-2C-hjb" firstAttribute="leading" secondItem="Yil-uy-B4A" secondAttribute="leading" constant="50" id="wJa-Sb-qY1"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Team Name" id="p7l-iF-rrv">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="yeO-fS-4zf">
+                                <connections>
+                                    <action selector="addPlayer:" destination="Rgo-x2-GWb" id="Q52-ax-Wdp"/>
+                                    <segue destination="yXy-0g-CHv" kind="show" identifier="newPlayer" id="JuC-Iu-ebM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="Lx3-fU-VNI">
+                                <connections>
+                                    <action selector="editTapped:" destination="Rgo-x2-GWb" id="bGc-Ov-EM2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editDoneButton" destination="Lx3-fU-VNI" id="6b7-9f-4gl"/>
+                        <outlet property="editTeamNameButton" destination="PcS-2C-hjb" id="izM-hG-Bl5"/>
+                        <outlet property="tableView" destination="Bok-Bq-zDY" id="vz7-PT-NMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBm-Fj-l9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.0144927536232" y="77.678571428571431"/>
+        </scene>
+        <!--New Player-->
+        <scene sceneID="T5q-LV-2bU">
+            <objects>
+                <viewController id="yXy-0g-CHv" customClass="NewEditPlayerViewController" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zlg-WE-6ud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0DS-KR-rsw">
+                                <rect key="frame" x="15" y="103" width="384" height="214"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nQN-Wh-CLi">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRi-1A-6tr">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="woK-o7-6Og"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Player Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-YU-JWe">
+                                                <rect key="frame" x="123" y="0.0" width="261" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-al-EUz">
+                                        <rect key="frame" x="0.0" y="45" width="384" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-uJ-vN5">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="X11-pg-AF2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Player Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HxF-lt-pco">
+                                                <rect key="frame" x="123" y="0.0" width="261" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wbo-UO-uaM">
+                                        <rect key="frame" x="0.0" y="90" width="384" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcH-xh-YCz">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="CPB-wu-uiC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Player Position" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="klS-kJ-wNL">
+                                                <rect key="frame" x="123" y="0.0" width="261" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="esc-21-3vW">
+                                        <rect key="frame" x="0.0" y="135" width="384" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games Played:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnU-Gx-Pt6">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="7BB-Rn-RhH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Games Played" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-go-At3">
+                                                <rect key="frame" x="123" y="0.0" width="261" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0lp-a8-QQB">
+                                        <rect key="frame" x="0.0" y="180" width="384" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-DY-xkk">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="ouU-KW-N4p"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itt-Gb-28I">
+                                                <rect key="frame" x="123" y="0.0" width="261" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EIO-4J-PFg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EIO-4J-PFg" firstAttribute="trailing" secondItem="0DS-KR-rsw" secondAttribute="trailing" constant="15" id="3rc-e2-yxF"/>
+                            <constraint firstItem="0DS-KR-rsw" firstAttribute="top" secondItem="EIO-4J-PFg" secondAttribute="top" constant="15" id="Dox-Gd-ITA"/>
+                            <constraint firstItem="0DS-KR-rsw" firstAttribute="leading" secondItem="EIO-4J-PFg" secondAttribute="leading" constant="15" id="nqk-kH-PHP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Player" id="eOQ-qg-72z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DjN-5I-PCt">
+                            <connections>
+                                <action selector="editDoneAddTapped:" destination="yXy-0g-CHv" id="44b-Pf-O25"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playerBirthdayTextField" destination="itt-Gb-28I" id="Dl3-a1-nmC"/>
+                        <outlet property="playerGamesPlayed" destination="RP6-go-At3" id="ctC-Zt-ZU5"/>
+                        <outlet property="playerNameTextField" destination="nc4-YU-JWe" id="bZV-dB-pdP"/>
+                        <outlet property="playerNumberTextField" destination="HxF-lt-pco" id="A1g-e6-Nmq"/>
+                        <outlet property="playerPositionTextField" destination="klS-kJ-wNL" id="r5f-U6-Irc"/>
+                        <segue destination="7Zc-y5-PXt" kind="unwind" identifier="unwindFromPlayer" unwindAction="unwindWithSegue:" id="QRz-Tb-tFZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUx-bj-zP6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7Zc-y5-PXt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2604" y="78"/>
+        </scene>
+        <!--New Team View Controller-->
+        <scene sceneID="SqX-rv-JUY">
+            <objects>
+                <viewController id="M36-KQ-0Yf" customClass="NewTeamViewController" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YnI-NN-dsG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZoY-Hu-nYU">
+                                <rect key="frame" x="10" y="138" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vJe-OS-dHP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBe-hB-zTa" customClass="RoundButton" customModule="Lassers__Jordan_Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="COG-QQ-Sj7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nof-1v-G7L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitTeamName:" destination="M36-KQ-0Yf" eventType="touchUpInside" id="kOd-wg-GWi"/>
+                                    <segue destination="VHu-Rg-EBB" kind="unwind" identifier="newTeam" unwindAction="unwindWithSegue:" id="vw4-G0-oM8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5jj-la-cjM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jBe-hB-zTa" firstAttribute="centerY" secondItem="YnI-NN-dsG" secondAttribute="centerY" id="BiS-qw-Kvf"/>
+                            <constraint firstItem="ZoY-Hu-nYU" firstAttribute="top" secondItem="5jj-la-cjM" secondAttribute="top" constant="50" id="JZU-B0-ju5"/>
+                            <constraint firstItem="ZoY-Hu-nYU" firstAttribute="leading" secondItem="5jj-la-cjM" secondAttribute="leading" constant="10" id="ijG-gy-wKZ"/>
+                            <constraint firstItem="5jj-la-cjM" firstAttribute="trailing" secondItem="ZoY-Hu-nYU" secondAttribute="trailing" constant="10" id="tKB-yy-rck"/>
+                            <constraint firstItem="jBe-hB-zTa" firstAttribute="centerX" secondItem="YnI-NN-dsG" secondAttribute="centerX" id="yD2-bl-jYI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fth-mN-PHC"/>
+                    <connections>
+                        <outlet property="teamNameText" destination="ZoY-Hu-nYU" id="s7T-i2-g6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nW3-ny-1ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VHu-Rg-EBB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="840"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dX8-RT-yiV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bb8-rY-NO5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3k3-EZ-BMZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rqg-qQ-yQN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPt-Oa-RaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="78.348214285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="paO-OK-Bsz"/>
+        <segue reference="JuC-Iu-ebM"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
