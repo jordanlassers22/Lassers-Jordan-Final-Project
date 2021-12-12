@@ -28,6 +28,7 @@ struct CoreDataHelper {
         let player = NSEntityDescription.insertNewObject(forEntityName: "Player", into: context) as! Player
         return player
     }
+    //Persists data on local device.
     static func save(){
         do {
             try context.save()
