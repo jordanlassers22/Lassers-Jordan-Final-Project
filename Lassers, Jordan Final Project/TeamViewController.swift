@@ -58,6 +58,7 @@ class TeamViewController: UIViewController {
         players = CoreDataHelper.retrievePlayers(from: team)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Prepare newTeamViewController for segue
         if segue.identifier == "editTeamName"{
             if let newTeamViewController = segue.destination as? NewTeamViewController{
                 newTeamViewController.team = team
@@ -69,7 +70,6 @@ class TeamViewController: UIViewController {
         }else{
             if let editPlayerViewController = segue.destination as? NewEditPlayerViewController, let indexPath = tableView.indexPathForSelectedRow{
                 editPlayerViewController.team = team
-                //editPlayerViewController.newPlayer = false
                 editPlayerViewController.player = players[indexPath.row]
             }
         }
