@@ -29,10 +29,11 @@ class NewEditPlayerViewController: UIViewController {
         playerGamesPlayed.delegate = self
         createDatePicker()
         createPositionPicker()
+        //Hides the users cursor on the position and birthday text fields since we are using a picker to get user input when they are clicked.
         playerPositionTextField.tintColor = UIColor.clear
         playerBirthdayTextField.tintColor = UIColor.clear
     }
-    
+    //Prepares the screen with the appropriate data if the player already exists when the screen is visited.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let player = player{
@@ -46,7 +47,7 @@ class NewEditPlayerViewController: UIViewController {
             navigationItem.title = "New Player"
         }
     }
-    
+    //User can press the done button to return to previous screen if all forms filled out correctly. Various error messages alert the user to incorrect data entry.
     @IBAction func editDoneAddTapped(_ sender: UIBarButtonItem) {
         
         guard let playerName = playerNameTextField.text, playerName.count > 3 else{
@@ -73,7 +74,7 @@ class NewEditPlayerViewController: UIViewController {
             return
         }
         
-        
+        // updates the players statistics and stores them on the device.
         if let player = player{
             player.name = playerName
             player.number = playerNumberString
@@ -82,6 +83,7 @@ class NewEditPlayerViewController: UIViewController {
             player.gamesPlayed = playerGamesPlayedString
             
             CoreDataHelper.save()
+            //if player does not exist, create a new player in core data
         }else{
             let player = CoreDataHelper.newPlayer()
             player.name = playerName
@@ -94,7 +96,7 @@ class NewEditPlayerViewController: UIViewController {
         }
         performSegue(withIdentifier: "unwindFromPlayer", sender: self)
     }
-    
+    //Creates the position picker that allows user to input player position by cycling through "Forward, Defensemen, and Goalie" options.
     func createPositionPicker(){
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -111,6 +113,7 @@ class NewEditPlayerViewController: UIViewController {
         playerPositionTextField.text = positions[ pickerView.selectedRow(inComponent: 0)]
         self.view.endEditing(true)
     }
+    //Creates the date picker that allows user to input player birthday.
     func createDatePicker(){
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -137,6 +140,7 @@ class NewEditPlayerViewController: UIViewController {
         playerBirthdayTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
+    //Function that allows app to send various alerts to the user.
     func showAlert(message: String){
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
@@ -144,7 +148,7 @@ class NewEditPlayerViewController: UIViewController {
     }
 
 }
-
+//After the user clicks return or enter when filling out a textfield, this function automatically moves their cursor to the next text field they need to fill out.
 extension NewEditPlayerViewController : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField{

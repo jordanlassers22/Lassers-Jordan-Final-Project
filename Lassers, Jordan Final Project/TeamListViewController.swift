@@ -30,19 +30,19 @@ class TeamListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if tableView.isEditing{
+        if tableView.isEditing{ // Makes sure that user is not in edditing mode when leaving the screen.
             editDone()
         }
     }
-    func editDone(){
+    func editDone(){ //Toggles the edit button between "Done" and "Edit"
         tableView.isEditing.toggle()
         editDoneButton.title = (tableView.isEditing) ? "Done" : "Edit"
     }
 
-    @IBAction func createNewTeam(_ sender: UIButton){
+    @IBAction func createNewTeam(_ sender: UIButton){ //Segue to newTeamViewController
         performSegue(withIdentifier: "showNewTeamViewController", sender: nil)
     }
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //Prepares for segue by setting the team selected in TeamViewController to the team selected by the user.
     if let teamViewController = segue.destination as? TeamViewController, let indexPath = tableView.indexPathForSelectedRow, segue.identifier == "showTeamViewController" {
         let team = teams[indexPath.row]
         teamViewController.team = team
@@ -51,6 +51,7 @@ class TeamListViewController: UIViewController {
     @IBAction func editAction(_ sender: UIBarButtonItem){
        editDone()
     }
+    //Retreives list of teams from core data upon returning to screen
     @IBAction func unwindWithSegue(_ segue : UIStoryboardSegue){
         teams = CoreDataHelper.retrieveTeams()
     }

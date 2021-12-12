@@ -25,7 +25,7 @@ class NewTeamViewController : UIViewController{
     @IBAction func submitTeamName(_ sender: Any) {
         
     }
-    
+    //Prepares for segue by updating TeamListView controller with the newly created team, and saves it in core data.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let text = teamNameText.text, text != "" else {return}
         if let teamListViewController = segue.destination as? TeamListViewController{

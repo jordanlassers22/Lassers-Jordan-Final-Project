@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//Class the makes buttons look nicer by rounding their edges and giving them a border.
 class RoundButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)

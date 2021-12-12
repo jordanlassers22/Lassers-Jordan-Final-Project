@@ -26,20 +26,24 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    //Updates navigation title with appropriate team name, and sets players to an array of relevant player objects.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = team.name
         players = CoreDataHelper.retrievePlayers(from: team)
     }
+    //Makes sure user is not in edditing mode when leaving screen.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if tableView.isEditing{
             editDone()
         }
     }
+    //Cycles between "Done" and "Edit" titles for navigation button and enables editing mode.
     func editDone(){
         tableView.isEditing.toggle()
         editDoneButton.title = (tableView.isEditing) ? "Done" : "Edit"
+        //Hides and unhides the edit team name button.
         editTeamNameButton.isHidden = !tableView.isEditing
     }
     @IBAction func editTapped(_ sender: Any){
@@ -49,7 +53,7 @@ class TeamViewController: UIViewController {
     @IBAction func addPlayer(_ sender: Any){
         print("ADD")
     }
-    
+    //Updates player array
     @IBAction func unwindWithSegue(_ segue : UIStoryboardSegue){
         players = CoreDataHelper.retrievePlayers(from: team)
     }
@@ -71,7 +75,7 @@ class TeamViewController: UIViewController {
         }
     }
     
-    
+    //Segue to newTeamViewController
     @IBAction func editTeam(_ sender: UIButton) {
         
     }

@@ -18,11 +18,12 @@ struct CoreDataHelper {
 
         return context
     }()
-    
+    //Creates a new team in core data
     static func newTeam() -> Team{
         let team = NSEntityDescription.insertNewObject(forEntityName: "Team", into: context) as! Team
         return team
     }
+    //Creates a new player in core data
     static func newPlayer() -> Player{
         let player = NSEntityDescription.insertNewObject(forEntityName: "Player", into: context) as! Player
         return player
@@ -34,6 +35,7 @@ struct CoreDataHelper {
             print("Could not save. Error \(error.localizedDescription)")
         }
     }
+    //Removes a team and all of its players from users device.
     static func delete(team : Team){
          let players = team.players.array(of: Player.self)
             for player in players{
@@ -56,6 +58,7 @@ struct CoreDataHelper {
             return []
         }
     }
+    //Retrieves a teams array of players from the users device.
     static func retrievePlayers(from team: Team)-> [Player]{
         print("Getting players from team: \(team.name ?? "No team name")")
         do{
