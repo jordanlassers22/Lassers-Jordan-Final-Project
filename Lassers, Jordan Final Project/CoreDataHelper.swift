@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 struct CoreDataHelper {
     static let context: NSManagedObjectContext = {
+        //context allows us create, edit and delete NSManagedObjects
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError()
         }
@@ -78,6 +79,7 @@ struct CoreDataHelper {
         }
     }
 }
+//Converts NSSet to and array
 extension Optional where Wrapped == NSSet {
     func array<T: Hashable>(of: T.Type) -> [T] {
         if let set = self as? Set<T> {
